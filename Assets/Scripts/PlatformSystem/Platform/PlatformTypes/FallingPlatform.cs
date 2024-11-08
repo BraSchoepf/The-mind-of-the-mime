@@ -1,97 +1,95 @@
 using System.Collections;
 using UnityEngine;
 
-namespace PlatformSystem
+public class FallingPlatform : MonoBehaviour
 {
-    public class FallingPlatform : Platform
+    [SerializeField] private float _waitingTime = 2f;
+    [SerializeField] private float _rotationSpeed;
+
+    [SerializeField] private float timeBeforeDisappear = 2f;
+    [SerializeField] private float timeBeforeReset = 2f;
+    [SerializeField] private float vibrationIntensity = 0.05f;
+    [SerializeField] private float vibrationDuration = 0.5f;
+
+    private Vector3 _initialPosition;
+    private Rigidbody2D _rb;
+    private Collider2D _collider;
+    private bool _fall;
+
+    private void Start()
     {
-        [SerializeField] private float timeBeforeDisappear = 2f;  // Tiempo antes de desaparecer
-        [SerializeField] private float timeBeforeReset = 2f;      // Tiempo antes de regresar a la posición original
-        [SerializeField] private float vibrationIntensity = 0.05f; // Intensidad de la vibración
-        [SerializeField] private float vibrationDuration = 0.5f;  // Duración de la vibración
+        _rb = GetComponent<Rigidbody2D>();
+        _collider = GetComponent<Collider2D>();  // Asigna el componente Collider2D de la plataforma
+        _initialPosition = transform.position;   // Guarda la posición inicial
+    }
 
-        private Vector3 initialPosition;
-
-        protected override void Awake()
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
         {
-            base.Awake();
-            if (rb != null)
-            {
-                rb.bodyType = RigidbodyType2D.Static;
-            }
-            initialPosition = transform.position; 
+            Collider2D playerCollider = other.collider;  // Obtiene el collider del jugador
+            StartCoroutine(HandleFalling(playerCollider));
+        }
+    }
+
+    private IEnumerator HandleFalling(Collider2D playerCollider)
+    {
+        yield return new WaitForSeconds(_waitingTime);
+        _fall = true;
+
+        yield return StartCoroutine(VibratePlatform());
+
+        // Ignora la colisión con el jugador temporalmente
+        Physics2D.IgnoreCollision(_collider, playerCollider, true);
+
+        _rb.constraints = RigidbodyConstraints2D.None;
+        _rb.AddForce(new Vector2(0.1f, 0));
+
+        yield return new WaitForSeconds(timeBeforeDisappear);
+
+        ResetPlatform();
+
+        // Rehabilita la colisión con el jugador
+        Physics2D.IgnoreCollision(_collider, playerCollider, false);
+    }
+
+    private IEnumerator VibratePlatform()
+    {
+        Vector3 originalPosition = transform.position;
+        float elapsed = 0f;
+
+        while (elapsed < vibrationDuration)
+        {
+            transform.position = originalPosition + (Vector3)Random.insideUnitCircle * vibrationIntensity;
+            elapsed += Time.deltaTime;
+            yield return null;
         }
 
-        protected override void OnCollisionEnter2D(Collision2D collision)
+        transform.position = originalPosition;
+    }
+
+    private void ResetPlatform()
+    {
+        gameObject.SetActive(true);
+
+        transform.position = _initialPosition;
+
+        if (_rb != null)
         {
-            if (collision.gameObject.CompareTag("Player"))
+
+            if (_rb.bodyType == RigidbodyType2D.Dynamic)
             {
-                StartCoroutine(HandleFalling());
-            }
-        }
-
-        private IEnumerator HandleFalling()
-        {
-          
-            Fall();
-
-            yield return new WaitForSeconds(0.1f);
-
-            yield return StartCoroutine(VibratePlatform());
-
-            yield return new WaitForSeconds(timeBeforeDisappear);
-
-            gameObject.SetActive(true);
-
-            yield return new WaitForSeconds(timeBeforeReset);
-
-            ResetPlatform();
-        }
-
-        private IEnumerator VibratePlatform()
-        {
-            Vector3 originalPosition = transform.position;
-            float elapsed = 0f;
-
-            while (elapsed < vibrationDuration)
-            {
-                transform.position = originalPosition + (Vector3)Random.insideUnitCircle * vibrationIntensity;
-                elapsed += Time.deltaTime;
-                yield return null;
-            }
-
-            transform.position = originalPosition;
-        }
-
-        private void ResetPlatform()
-        {
-            gameObject.SetActive(true);
-
-            transform.position = initialPosition;
-
-            if (rb != null)
-            {
-                rb.bodyType = RigidbodyType2D.Static;
-
-                if (rb.bodyType == RigidbodyType2D.Dynamic)
-                {
-                    rb.velocity = Vector2.zero;  
-                    rb.angularVelocity = 0f;     
-                }
-            }
-        }
-
-        protected override void Fall()
-        {
-            base.Fall();
-            if (rb != null)
-            {
-                rb.bodyType = RigidbodyType2D.Dynamic; 
-                rb.gravityScale = 1.5f;
+                _rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                _rb.velocity = Vector2.zero;
+                _rb.angularVelocity = 0f;
             }
         }
     }
 }
+
+
+
+
 
 
 

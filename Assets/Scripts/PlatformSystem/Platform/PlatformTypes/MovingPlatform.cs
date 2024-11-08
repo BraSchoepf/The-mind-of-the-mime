@@ -1,47 +1,64 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace PlatformSystem
+public class MovingPlatform : MonoBehaviour
 {
+    [SerializeField] private Transform[] _movementPoint;
+    [SerializeField] private float speed = 2f;
 
+    private int _nextPoint = 1;
+    private bool _movementSequence = true;
 
-    public class MovingPlatform : Platform
+    private void Start()
     {
-        [SerializeField] private Transform pointA;
-        [SerializeField] private Transform pointB;
-        [SerializeField] private float speed = 2f;
-
-        private Vector2 targetPosition;
-
-        protected override void Awake()
+        if (_movementPoint.Length < 2)
         {
-            base.Awake();
-            
-            if (rb != null)
-            {
-                rb.bodyType = RigidbodyType2D.Dynamic;
-                rb.gravityScale = 0;  // Asegúrate de que la gravedad no afecte el movimiento
-            }
-            targetPosition = pointB.position;
+            Debug.LogError("There should be at least two points for the platform to move between.");
+            enabled = false; 
+            return;
+        }
+    }
+
+    private void Update()
+    {
+        
+        if (_movementSequence && _nextPoint >= _movementPoint.Length - 1)
+        {
+            _movementSequence = false;
+        }
+       
+        else if (!_movementSequence && _nextPoint <= 0)
+        {
+            _movementSequence = true;
         }
 
-        private void Update()
+        if (_nextPoint >= 0 && _nextPoint < _movementPoint.Length)
         {
-            MovePlatform();
-        }
-
-        private void MovePlatform()
-        {
-            if (rb != null)
+            transform.position = Vector2.MoveTowards(transform.position, _movementPoint[_nextPoint].position,
+                speed * Time.deltaTime);
+        
+            if (Vector2.Distance(transform.position, _movementPoint[_nextPoint].position) < 0.1f)
             {
-                rb.MovePosition(Vector2.MoveTowards(rb.position, targetPosition, speed * Time.deltaTime));
-
-                if (Vector2.Distance(rb.position, targetPosition) < 0.1f)
-                {
-                    targetPosition = targetPosition == (Vector2)pointA.position ? (Vector2)pointB.position : (Vector2)pointA.position;
-                }
+                _nextPoint = _movementSequence ? _nextPoint + 1 : _nextPoint - 1;
             }
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.transform.SetParent(this.transform);
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.transform.SetParent(null);
+        }
+
+    }
 }
+
