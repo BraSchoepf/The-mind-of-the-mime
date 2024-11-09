@@ -1,129 +1,95 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 namespace Lens
 {
-    // Enum LensMode para los diferentes modos de la lupa
-    public enum LensMode
+    public class MagicLen : MonoBehaviour
     {
-        Reveal,
-        Observe,
-        Destroy,
-        Scanner
-    }
+        public Color lensColor = Color.red;
+        public float activationRange = 0.5f;
 
-    // Clase base MagicLens
-    public abstract class MagicLen : MonoBehaviour
-    {
-        public LayerMask revealLayer;
-        public float revealDistance = 0.5f;
+        private Rigidbody2D _rb;
+        private SpriteRenderer _spriteRenderer;
+        private SpriteMask _revealMask;
 
-        protected Rigidbody2D rb2D;
-        protected LensMode currentMode;
-
-        protected virtual void Start()
+        void Start()
         {
-            rb2D = GetComponent<Rigidbody2D>();
-            if (rb2D != null)
-            {
-                rb2D.isKinematic = true;
-            }
-            else
-            {
-                Debug.LogError("RigidBody2D is null");
-            }
+            _rb = GetComponent<Rigidbody2D>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _revealMask = GetComponentInChildren<SpriteMask>();
 
-            Collider2D collider = GetComponent<Collider2D>();
-            if (collider != null)
+            if (_spriteRenderer != null)
             {
-                collider.isTrigger = true;
+                _spriteRenderer.color = lensColor;
             }
-            else
-            {
-                Debug.LogError("Collider2D is null");
-            }
-        }
-
-        protected virtual void Update()
-        {
-            MoveLensWithMouse();
-            SwitchLensMode();
-            HandleObjects();
         }
 
         private void MoveLensWithMouse()
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            rb2D.MovePosition(mousePosition);
+            _rb.MovePosition(mousePosition);
+
+            if (_revealMask != null)
+            {
+                _revealMask.transform.position = mousePosition;
+            }
         }
 
-        protected virtual void HandleObjects()
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            Collider2D[] objectsInRange = Physics2D.OverlapCircleAll(transform.position, revealDistance, revealLayer);
-
-            foreach (Collider2D obj in objectsInRange)
+            if (collision.CompareTag("HiddenPlatform"))
             {
-                switch (currentMode)
+                // Buscamos el componente IInvisiblePlatform
+                IInvisiblePlatform platform = collision.GetComponent<IInvisiblePlatform>();
+                if (platform != null)
                 {
-                    case LensMode.Reveal:
-                        RevealObjects(obj);
-                        break;
-                    case LensMode.Observe:
-                        ObserveObjects(obj);
-                        break;
-                    case LensMode.Destroy:
-                        DestroyObjects(obj);
-                        break;
-                    case LensMode.Scanner:
-                        ScannerObjects(obj);
-                        break;
-                    default:
-                        Debug.LogError("Unknown LensMode");
-                        break;
+                    Debug.Log("Plataforma detectada por la lupa");
+                    platform.ActivateSprite();
+                }
+                else
+                {
+                    Debug.LogWarning("No se encontró el componente IInvisiblePlatform en el objeto detectado.");
                 }
             }
         }
 
-        protected virtual void SwitchLensMode()
+        private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            MoveLensWithMouse();
+
+            if (Input.GetMouseButtonDown(1))  // Detecta clic derecho
             {
-                currentMode = (LensMode)(((int)currentMode + 1) % System.Enum.GetValues(typeof(LensMode)).Length);
-                SetLensColor();
-                Debug.Log($"Current lens mode: {currentMode}");
+                Debug.Log("Clic derecho detectado, intentando activar colisión.");
+
+                Collider2D[] platformsInRange = Physics2D.OverlapCircleAll(transform.position, activationRange);
+
+                foreach (Collider2D platformCollider in platformsInRange)
+                {
+                    if (platformCollider.CompareTag("HiddenPlatform"))
+                    {
+                        IInvisiblePlatform platform = platformCollider.GetComponent<IInvisiblePlatform>();
+                        if (platform != null)
+                        {
+                            Debug.Log("Activando colisión de la plataforma y sprite visibles");
+                            platform.EnableCollision();  // Llamada a EnableCollision para activar colisión
+                            platform.ActivateSprite();   // Asegura que el sprite esté visible
+                            platform.DeactivateMaskInteraction();
+                        }
+                        else
+                        {
+                            Debug.LogWarning("No se encontró el componente IInvisiblePlatform en el objeto detectado.");
+                        }
+                    }
+                }
             }
-        }
-
-        protected virtual void SetLensColor()
-        {
-            // Define el color según el modo actual
-            Color lensColor = currentMode.GetLensColor();
-            // Aquí puedes aplicar el color a un componente visual de la lente, si tienes uno
-        }
-
-        // Métodos abstractos para que las clases hijas los implementen
-        protected abstract void RevealObjects(Collider2D obj);
-        protected abstract void ObserveObjects(Collider2D obj);
-        protected abstract void DestroyObjects(Collider2D obj);
-        protected abstract void ScannerObjects(Collider2D obj);
-    }
-
-    // Métodos de extensión para LensMode
-    public static class LensModeExtensions
-    {
-        public static Color GetLensColor(this LensMode mode)
-        {
-            return mode switch
-            {
-                LensMode.Reveal => Color.red,
-                LensMode.Observe => Color.blue,
-                LensMode.Destroy => Color.green,
-                LensMode.Scanner => Color.yellow,
-                _ => Color.white
-            };
         }
     }
 }
+
+
+
+
+
+
+
+
 

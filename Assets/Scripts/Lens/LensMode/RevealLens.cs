@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lens
+/*namespace Lens
 {
-    public class RevealLens : MagicLen
+    public class RevealLens
     {
         protected override void RevealObjects(Collider2D obj)
         {
@@ -38,5 +38,5 @@ namespace Lens
             }
         }
     }
-}
+}*/
 
