@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    [SerializeField] private Transform[] _movementPoint;
-    [SerializeField] private float speed = 2f;
+    [SerializeField] protected Transform[] _movementPoint;
+    [SerializeField] protected float speed = 2f;
 
-    private int _nextPoint = 1;
-    private bool _movementSequence = true;
+    protected int _nextPoint = 1;
+    protected bool _movementSequence = true;
 
-    private void Start()
+    protected virtual void Start()
     {
         if (_movementPoint.Length < 2)
         {
@@ -18,7 +18,7 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         
         if (_movementSequence && _nextPoint >= _movementPoint.Length - 1)
