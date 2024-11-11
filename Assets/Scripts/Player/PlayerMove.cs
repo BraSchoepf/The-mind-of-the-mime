@@ -7,13 +7,14 @@ public class PlayerMove : MonoBehaviour
 
     [Header("displacement")]
 
-    [SerializeField] private float _speed;
+    [SerializeField] private float _groundSpeed = 5f;
+    [SerializeField] private float _airSpeed = 3f;
     [Range(0, 0.3f)][SerializeField] private float _motionSoftener;
     private Vector2 _input;
     private Vector3 _velocity = Vector3.zero;
     private bool _lokingRigth;
     private float _horizontalMovement;
-    
+
 
     [Header("jump")]
 
@@ -28,7 +29,7 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] private Transform _wallCheck;
     [SerializeField] private Vector3 _boxWallDimension;
-    [SerializeField]private float _slidinVelocity;
+    [SerializeField] private float _slidinVelocity;
     private bool _isWall;
     private bool _slidIng;
     [SerializeField] private float _jumpForceWallY;
@@ -46,9 +47,10 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        float _speed = _isGrounded ? _groundSpeed : _airSpeed;
         _input.x = Input.GetAxis("Horizontal");
         _input.y = Input.GetAxis("Vertical");
-        
+
         _horizontalMovement = _input.x * _speed;
 
 
@@ -70,10 +72,10 @@ public class PlayerMove : MonoBehaviour
             {
                 _jump = true;
             }
-            
-            
-             
-           
+
+
+
+
         }
     }
 
@@ -122,7 +124,7 @@ public class PlayerMove : MonoBehaviour
         {
             JumpingFromTheWall();
         }
-       
+
     }
     private void JumpingFromTheWall()
     {
@@ -137,7 +139,7 @@ public class PlayerMove : MonoBehaviour
     IEnumerator SwichJumpWall()
     {
         _jumpingWall = true;
-        yield return new WaitForSeconds(_jumpTimeWall); 
+        yield return new WaitForSeconds(_jumpTimeWall);
         _jumpingWall = false;
     }
     private void Jump()
@@ -148,7 +150,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Turn()
     {
-      _lokingRigth = !_lokingRigth;
+        _lokingRigth = !_lokingRigth;
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
@@ -162,4 +164,3 @@ public class PlayerMove : MonoBehaviour
         Gizmos.DrawWireCube(_wallCheck.position, _boxWallDimension);
     }
 }
-

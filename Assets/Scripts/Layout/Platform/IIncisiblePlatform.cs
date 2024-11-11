@@ -5,3 +5,8 @@ public interface IInvisiblePlatform
     void DeactivateMaskInteraction();
 }
 
+public interface IResettable
+{
+    void ResetObject();
+}
+

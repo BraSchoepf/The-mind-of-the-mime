@@ -38,12 +38,16 @@ namespace PlatformAndLensSystem
         protected virtual IEnumerator HandleFalling(Collider2D playerCollider)
         {
             yield return new WaitForSeconds(_waitingTime);
-            _fall = true;
 
             yield return StartCoroutine(VibratePlatform());
 
-            // Ignora la colisión con el jugador temporalmente
-            Physics2D.IgnoreCollision(_collider, playerCollider, true);
+            _fall = true;
+
+            if (playerCollider != null && _collider != null)  // Verificar que ambos colliders no sean nulos
+            {
+                // Ignora la colisión con el jugador temporalmente
+                Physics2D.IgnoreCollision(_collider, playerCollider, true);
+            }
 
             _rb.constraints = RigidbodyConstraints2D.None;
             _rb.AddForce(new Vector2(0.1f, 0));
@@ -52,8 +56,11 @@ namespace PlatformAndLensSystem
 
             ResetPlatform();
 
-            // Rehabilita la colisión con el jugador
-            Physics2D.IgnoreCollision(_collider, playerCollider, false);
+            if (playerCollider != null && _collider != null)  // Verificar que ambos colliders no sean nulos
+            {
+                // Rehabilita la colisión con el jugador
+                Physics2D.IgnoreCollision(_collider, playerCollider, false);
+            }
         }
 
         protected virtual IEnumerator VibratePlatform()
@@ -75,11 +82,15 @@ namespace PlatformAndLensSystem
         {
             gameObject.SetActive(true);
 
+            // Restablecer la posición inicial
             transform.position = _initialPosition;
+
+            // Restablecer la rotación a cero
+            transform.rotation = Quaternion.identity;
 
             if (_rb != null)
             {
-
+                // Si el Rigidbody2D es dinámico, restablece las restricciones y velocidad
                 if (_rb.bodyType == RigidbodyType2D.Dynamic)
                 {
                     _rb.constraints = RigidbodyConstraints2D.FreezeAll;

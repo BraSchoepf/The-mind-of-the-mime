@@ -7,6 +7,9 @@ TagManager:
   - HiddenPlatform
   - Main Camera
   - Lens
+  - Obstacle
+  - ChecksPoint
+  - Box
   layers:
   - Default
   - TransparentFX

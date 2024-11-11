@@ -4,7 +4,10 @@ namespace Lens
 {
     public class MagicLen : MonoBehaviour
     {
-        public Color lensColor = Color.red;
+        public enum LensMode { Reveal, Destroy }  // Enum para definir los modos de la lente
+        public LensMode currentMode = LensMode.Reveal;  // Modo inicial en Reveal
+        public Color revealColor = Color.red;
+        public Color destroyColor = Color.blue;
         public float activationRange = 0.5f;
 
         private Rigidbody2D _rb;
@@ -17,9 +20,14 @@ namespace Lens
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _revealMask = GetComponentInChildren<SpriteMask>();
 
+            UpdateLensColor();  // Asigna el color inicial basado en el modo actual
+        }
+
+        private void UpdateLensColor()
+        {
             if (_spriteRenderer != null)
             {
-                _spriteRenderer.color = lensColor;
+                _spriteRenderer.color = currentMode == LensMode.Reveal ? revealColor : destroyColor;
             }
         }
 
@@ -36,18 +44,12 @@ namespace Lens
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("HiddenPlatform"))
+            if (currentMode == LensMode.Reveal && collision.CompareTag("HiddenPlatform"))
             {
-                // Buscamos el componente IInvisiblePlatform
                 IInvisiblePlatform platform = collision.GetComponent<IInvisiblePlatform>();
                 if (platform != null)
                 {
-                    Debug.Log("Plataforma detectada por la lupa");
                     platform.ActivateSprite();
-                }
-                else
-                {
-                    Debug.LogWarning("No se encontró el componente IInvisiblePlatform en el objeto detectado.");
                 }
             }
         }
@@ -58,34 +60,41 @@ namespace Lens
 
             if (Input.GetMouseButtonDown(1))  // Detecta clic derecho
             {
-                Debug.Log("Clic derecho detectado, intentando activar colisión.");
+                Collider2D[] objectsInRange = Physics2D.OverlapCircleAll(transform.position, activationRange);
 
-                Collider2D[] platformsInRange = Physics2D.OverlapCircleAll(transform.position, activationRange);
-
-                foreach (Collider2D platformCollider in platformsInRange)
+                foreach (Collider2D obj in objectsInRange)
                 {
-                    if (platformCollider.CompareTag("HiddenPlatform"))
+                    if (currentMode == LensMode.Reveal && obj.CompareTag("HiddenPlatform"))
                     {
-                        IInvisiblePlatform platform = platformCollider.GetComponent<IInvisiblePlatform>();
+                        IInvisiblePlatform platform = obj.GetComponent<IInvisiblePlatform>();
                         if (platform != null)
                         {
-                            Debug.Log("Activando colisión de la plataforma y sprite visibles");
-                            platform.EnableCollision();  // Llamada a EnableCollision para activar colisión
-                            platform.ActivateSprite();   // Asegura que el sprite esté visible
+                            platform.EnableCollision();
+                            platform.ActivateSprite();
                             platform.DeactivateMaskInteraction();
                         }
-                        else
-                        {
-                            Debug.LogWarning("No se encontró el componente IInvisiblePlatform en el objeto detectado.");
-                        }
+                    }
+                    else if (currentMode == LensMode.Destroy && obj.CompareTag("Obstacle"))
+                    {
+                        Destroy(obj.gameObject);  // Destruye el objeto Obstacle
                     }
                 }
             }
+
+            // Cambiar el modo de la lente con una tecla, por ejemplo "Q"
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                ToggleLensMode();
+            }
+        }
+
+        private void ToggleLensMode()
+        {
+            currentMode = currentMode == LensMode.Reveal ? LensMode.Destroy : LensMode.Reveal;
+            UpdateLensColor();  // Actualiza el color de la lente al cambiar de modo
         }
     }
 }
-
-
 
 
 
