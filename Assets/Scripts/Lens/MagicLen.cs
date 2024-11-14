@@ -93,6 +93,14 @@ namespace Lens
             currentMode = currentMode == LensMode.Reveal ? LensMode.Destroy : LensMode.Reveal;
             UpdateLensColor();  // Actualiza el color de la lente al cambiar de modo
         }
+
+        private void OnDrawGizmos()
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(mousePosition, 0.1f); // Dibuja un círculo en el punto del Raycast
+        }
     }
 }
 

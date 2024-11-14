@@ -21,25 +21,38 @@ public class CheckPointSystem : MonoBehaviour
     {
         instance = this;
 
-        // Restablece los valores de PlayerPrefs al iniciar la escena
-        PlayerPrefs.DeleteAll();  // Reinicia todos los datos guardados
-        PlayerPrefs.Save();       // Guarda los cambios
+        // Reinicia los datos de puntos de control guardados
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
 
-        // Establecer el índice de punto de control inicial desde el inspector o el valor guardado
+        // Define el índice de punto de control inicial desde el inspector
         indexChecksPoint = Mathf.Clamp(startingCheckPointIndex, 0, _checksPoint.Length - 1);
 
-        // Busca todos los puntos de control en la escena
+        // Encuentra todos los puntos de control en la escena
         _checksPoint = GameObject.FindGameObjectsWithTag("ChecksPoint");
 
-        // Asegurarse de que los puntos de control existen
         if (_checksPoint.Length == 0)
         {
             Debug.LogError("No hay puntos de control en la escena.");
             return;
         }
 
-        // Instanciar al jugador en el punto de control inicial definido
-        RespawnPlayer();
+        // Busca un jugador existente en la escena
+        _currentPlayer = GameObject.FindGameObjectWithTag("Player");
+
+        // Si ya existe un jugador, asigna la cámara y omite la creación de uno nuevo
+        if (_currentPlayer != null)
+        {
+            if (_cinemachineCamera != null)
+            {
+                _cinemachineCamera.Follow = _currentPlayer.transform;
+            }
+        }
+        else
+        {
+            // Instancia el jugador en el punto de control inicial
+            RespawnPlayer();
+        }
     }
 
     public void LastCheckPoint(GameObject checkPoint)

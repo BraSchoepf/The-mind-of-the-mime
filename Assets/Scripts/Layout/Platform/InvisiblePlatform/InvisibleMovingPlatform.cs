@@ -4,7 +4,7 @@ public class InvisibleMovingPlatform : MovingPlatform, IInvisiblePlatform
 {
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
-    private bool _isInvisible = true;
+    protected bool _isInvisible = true;
 
     // Llamar a la función Start de la clase base (MovingPlatform) para configurar el movimiento
     protected override void Start()
@@ -30,18 +30,13 @@ public class InvisibleMovingPlatform : MovingPlatform, IInvisiblePlatform
     // Hacer la plataforma visible y habilitar la colisión
     public void ActivatePlatform()
     {
-        if (_spriteRenderer != null)
+        if (_isInvisible) // Solo activar si la plataforma está invisible
         {
-            _spriteRenderer.enabled = true; // Activar el sprite
+            ActivateSprite(); // Llama al método de la interfaz para visibilidad
+            EnableCollision(); // Llama al método de la interfaz para colisión
+            _isInvisible = false;
+            Debug.Log("Plataforma Invisible Activada");
         }
-
-        if (_collider != null)
-        {
-            _collider.isTrigger = false; // Desactivar el trigger y permitir colisiones
-        }
-
-        _isInvisible = false;
-        Debug.Log("Plataforma Invisible Activada");
     }
 
     // Implementación de ActivateSprite de la interfaz IInvisiblePlatform
@@ -66,13 +61,14 @@ public class InvisibleMovingPlatform : MovingPlatform, IInvisiblePlatform
         // Verifica si el jugador hizo clic derecho
         if (Input.GetMouseButtonDown(1)) // Clic derecho
         {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0.5f, LayerMask.GetMask("HiddenLayer"));
 
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
             if (hit.collider != null && hit.collider.gameObject == gameObject)
-                if (_isInvisible)
             {
                 ActivatePlatform(); // Activa la visibilidad y la colisión
+            
             }
         }
     }
@@ -95,6 +91,12 @@ public class InvisibleMovingPlatform : MovingPlatform, IInvisiblePlatform
             _collider.isTrigger = false; // Habilita la colisión completa
             Debug.Log("Colisión de la plataforma activada.");
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 0.2f); // Visualización del rango de activación
     }
 }
 
