@@ -66,7 +66,11 @@ public class InvisibleMovingPlatform : MovingPlatform, IInvisiblePlatform
         // Verifica si el jugador hizo clic derecho
         if (Input.GetMouseButtonDown(1)) // Clic derecho
         {
-            if (_isInvisible)
+
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+            if (hit.collider != null && hit.collider.gameObject == gameObject)
+                if (_isInvisible)
             {
                 ActivatePlatform(); // Activa la visibilidad y la colisión
             }

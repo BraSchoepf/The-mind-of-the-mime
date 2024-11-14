@@ -37,11 +37,16 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float _jumpTimeWall;
     private bool _jumpingWall;
 
+    [Header("Animation")]
+
+    private Animator _animator;
+
 
 
 
     void Start()
     {
+        _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
     }
 
@@ -52,6 +57,11 @@ public class PlayerMove : MonoBehaviour
         _input.y = Input.GetAxis("Vertical");
 
         _horizontalMovement = _input.x * _speed;
+
+        _animator.SetFloat("Horizontal",Mathf.Abs(_horizontalMovement));
+
+        _animator.SetFloat("SpeedY", _rb.velocity.y);
+
 
 
         if (Input.GetButtonDown("Jump"))
@@ -83,6 +93,8 @@ public class PlayerMove : MonoBehaviour
     {
         _isGrounded = Physics2D.OverlapBox(_groundCheck.position, _boxDimension, 0f, _groundLayer | (1 << LayerMask.NameToLayer("HiddenLayer")));
         _isWall = Physics2D.OverlapBox(_wallCheck.position, _boxWallDimension, 0f, _groundLayer | (1 << LayerMask.NameToLayer("HiddenLayer")));
+
+        _animator.SetBool("_isGround", _isGrounded);
 
         // Reiniciar jumptimewall si el jugador está en el suelo
         if (_isGrounded)
