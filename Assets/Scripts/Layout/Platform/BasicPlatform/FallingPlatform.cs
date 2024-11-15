@@ -22,7 +22,7 @@ namespace PlatformAndLensSystem
         protected virtual void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
-            _collider = GetComponent<Collider2D>();  // Asigna el componente Collider2D de la plataforma
+            _collider = GetComponent<Collider2D>();  
             _initialPosition = transform.position;   // Guarda la posición inicial
         }
 

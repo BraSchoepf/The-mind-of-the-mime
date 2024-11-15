@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-    private bool _isActivated = false; // Variable para controlar si ya fue activado
+    public Animator animator;
+    private bool _isActivated = false; 
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();  
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !_isActivated)
         {
+            animator.SetTrigger("CheckActive");
             CheckPointSystem.instance.LastCheckPoint(gameObject);
-            _isActivated = true; // Marcar el punto como activado
+            _isActivated = true; 
         }
     }
 
     private void OnDrawGizmos()
     {
-        // Dibuja una esfera para visualizar el punto de control en la escena
+       
         Gizmos.color = Color.green;
         Gizmos.DrawSphere(transform.position, 0.2f);
     }
 }
+

@@ -58,7 +58,7 @@ namespace Lens
         {
             MoveLensWithMouse();
 
-            if (Input.GetMouseButtonDown(1))  // Detecta clic derecho
+            if (Input.GetMouseButtonDown(0))  
             {
                 Collider2D[] objectsInRange = Physics2D.OverlapCircleAll(transform.position, activationRange);
 

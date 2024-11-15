@@ -144,7 +144,7 @@ public class PlayerMove : MonoBehaviour
         _rb.velocity = new Vector2(_jumpForceWallX * -_input.x, _jumpForceWallY);
 
         // Reinicia el temporizador cada vez que el jugador hace un salto de pared
-        StopCoroutine(SwichJumpWall());  // Detenemos cualquier ejecución previa para reiniciar
+        StopCoroutine(SwichJumpWall());  
         StartCoroutine(SwichJumpWall());
     }
 

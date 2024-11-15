@@ -9,13 +9,11 @@ public class InvisibleMovingPlatform : MovingPlatform, IInvisiblePlatform
     // Llamar a la función Start de la clase base (MovingPlatform) para configurar el movimiento
     protected override void Start()
     {
-        base.Start(); // Llama al Start de MovingPlatform
+        base.Start(); 
 
-        // Inicializar componentes
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider2D>();
 
-        // Hacer la plataforma invisible al principio
         if (_spriteRenderer != null)
         {
             _spriteRenderer.enabled = false; // Invisible al principio
@@ -23,7 +21,7 @@ public class InvisibleMovingPlatform : MovingPlatform, IInvisiblePlatform
 
         if (_collider != null)
         {
-            _collider.isTrigger = true; // Se usa como Trigger para evitar colisiones
+            _collider.isTrigger = true; 
         }
     }
 
@@ -32,8 +30,8 @@ public class InvisibleMovingPlatform : MovingPlatform, IInvisiblePlatform
     {
         if (_isInvisible) // Solo activar si la plataforma está invisible
         {
-            ActivateSprite(); // Llama al método de la interfaz para visibilidad
-            EnableCollision(); // Llama al método de la interfaz para colisión
+            ActivateSprite(); 
+            EnableCollision(); 
             _isInvisible = false;
             Debug.Log("Plataforma Invisible Activada");
         }
@@ -44,12 +42,10 @@ public class InvisibleMovingPlatform : MovingPlatform, IInvisiblePlatform
     {
         if (_spriteRenderer != null)
         {
-            _spriteRenderer.enabled = true; // Asegurarse de que el sprite esté visible
+            _spriteRenderer.enabled = true; 
             Debug.Log("Sprite activado en la plataforma");
         }
     }
-
-    // Llamado en Update, si la plataforma está visible, permite que se mueva
     protected override void Update()
     {
         // Si está visible, permite el movimiento
@@ -58,8 +54,8 @@ public class InvisibleMovingPlatform : MovingPlatform, IInvisiblePlatform
             base.Update(); // Llama al método Update de MovingPlatform para mover la plataforma
         }
 
-        // Verifica si el jugador hizo clic derecho
-        if (Input.GetMouseButtonDown(1)) // Clic derecho
+        
+        if (Input.GetMouseButtonDown(1)) 
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0.5f, LayerMask.GetMask("HiddenLayer"));
@@ -73,7 +69,7 @@ public class InvisibleMovingPlatform : MovingPlatform, IInvisiblePlatform
         }
     }
 
-    // Función que desactiva la interacción con las máscaras de sprite (para hacer invisible)
+    // Desactiva la interacción con las máscaras de sprite (para hacer invisible)
     public void DeactivateMaskInteraction()
     {
         if (_spriteRenderer != null)

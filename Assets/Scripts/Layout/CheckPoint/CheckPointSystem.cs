@@ -11,7 +11,6 @@ public class CheckPointSystem : MonoBehaviour
     [SerializeField] private GameObject _playerPrefab;
     [SerializeField] private CinemachineVirtualCamera _cinemachineCamera;
 
-    // Índice de punto de control inicial modificable desde el inspector
     [SerializeField] private int startingCheckPointIndex = 0;
 
     private GameObject _currentPlayer;
