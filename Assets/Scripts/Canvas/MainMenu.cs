@@ -14,6 +14,12 @@ public class MainMenu : MonoBehaviour
         Debug.Log("EXIT");
         Application.Quit(); // Sale de la aplicación
     }
+    public void ResetProgress()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        Debug.Log("Progreso reiniciado.");
+    }
 }
 
 

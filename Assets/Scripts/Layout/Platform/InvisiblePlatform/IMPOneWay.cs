@@ -11,8 +11,7 @@ public class IMPOneWay : InvisibleMovingPlatform
 
     private Vector3 _initialPosition; 
     private bool _isWaiting = false; 
-    private int _currentDestinationIndex = 0; // Índice del punto de destino actual
-    private bool _hasCompletedCycle = false; 
+    private int _currentDestinationIndex = 0; // Índice del punto de destino actual 
 
     protected override void Start()
     {

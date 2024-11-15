@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneTransitionManager : MonoBehaviour
@@ -17,15 +17,15 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
-    // Método para cambiar de escena al iniciar el juego desde el menú
+    // Mï¿½todo para cambiar de escena al iniciar el juego desde el menï¿½
     public void StartGame()
     {
-        
-        int startingSceneIndex = 1; 
+
+        int startingSceneIndex = 1;
         LoadScene(startingSceneIndex);
     }
 
-    
+
     public void ChangeLevel(int sceneIndex, int checkpointIndex)
     {
         PlayerPrefs.SetInt("ChecksIndex", checkpointIndex); // Guardamos el punto de control
@@ -36,12 +36,14 @@ public class SceneTransitionManager : MonoBehaviour
     public void EndGame()
     {
         Debug.Log("Fin del juego.");
-        LoadScene(0); 
+        LoadScene(0);
     }
     private void LoadScene(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
     }
 }
+
+
 
 

@@ -5,11 +5,11 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     public Animator animator;
-    private bool _isActivated = false; 
+    private bool _isActivated = false;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();  
+        animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -18,15 +18,16 @@ public class CheckPoint : MonoBehaviour
         {
             animator.SetTrigger("CheckActive");
             CheckPointSystem.instance.LastCheckPoint(gameObject);
-            _isActivated = true; 
+            _isActivated = true;
         }
     }
 
     private void OnDrawGizmos()
     {
-       
+
         Gizmos.color = Color.green;
         Gizmos.DrawSphere(transform.position, 0.2f);
     }
 }
+
 

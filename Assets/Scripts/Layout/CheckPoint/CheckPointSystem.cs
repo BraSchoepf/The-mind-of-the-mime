@@ -1,47 +1,43 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Cinemachine;
 
 public class CheckPointSystem : MonoBehaviour
 {
     public static CheckPointSystem instance;
 
-    [SerializeField] private GameObject[] _checksPoint;
-    [SerializeField] private GameObject _playerPrefab;
-    [SerializeField] private CinemachineVirtualCamera _cinemachineCamera;
+    [SerializeField] private GameObject[] _checksPoint; // Puntos de control asignados desde el Inspector
+    [SerializeField] private GameObject _playerPrefab; // Prefab del jugador
+    [SerializeField] private CinemachineVirtualCamera _cinemachineCamera; // Cámara que seguirá al jugador
 
-    [SerializeField] private int startingCheckPointIndex = 0;
+    [SerializeField] private int startingCheckPointIndex = 0; // Índice inicial desde el Inspector
 
-    private GameObject _currentPlayer;
-    private int indexChecksPoint;
+    private GameObject _currentPlayer; // Referencia al jugador actual
+    private int indexChecksPoint; // Índice del último punto de control alcanzado
 
     private void Awake()
     {
         instance = this;
 
-        // Reinicia los datos de puntos de control guardados
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
+        // Cargar el índice del último punto de control o usar el predeterminado
+        indexChecksPoint = PlayerPrefs.GetInt("ChecksIndex", startingCheckPointIndex);
 
-        // Define el �ndice de punto de control inicial desde el inspector
-        indexChecksPoint = Mathf.Clamp(startingCheckPointIndex, 0, _checksPoint.Length - 1);
-
-        // Encuentra todos los puntos de control en la escena
-        _checksPoint = GameObject.FindGameObjectsWithTag("ChecksPoint");
-
-        if (_checksPoint.Length == 0)
+        // Validar que los puntos de control están asignados correctamente
+        if (_checksPoint == null || _checksPoint.Length == 0)
         {
-            Debug.LogError("No hay puntos de control en la escena.");
+            Debug.LogError("No hay puntos de control asignados en el Inspector.");
             return;
         }
 
-        // Busca un jugador existente en la escena
+        // Garantizar que el índice inicial no sea inválido
+        indexChecksPoint = Mathf.Clamp(indexChecksPoint, 0, _checksPoint.Length - 1);
+
+        // Buscar al jugador en la escena
         _currentPlayer = GameObject.FindGameObjectWithTag("Player");
 
-        // Si ya existe un jugador, asigna la c�mara y omite la creaci�n de uno nuevo
         if (_currentPlayer != null)
         {
+            // Si ya existe un jugador, asignar la cámara
             if (_cinemachineCamera != null)
             {
                 _cinemachineCamera.Follow = _currentPlayer.transform;
@@ -49,20 +45,20 @@ public class CheckPointSystem : MonoBehaviour
         }
         else
         {
-            // Instancia el jugador en el punto de control inicial
+            // Instanciar al jugador en el último punto de control
             RespawnPlayer();
         }
     }
 
     public void LastCheckPoint(GameObject checkPoint)
     {
-        // Guardar el �ltimo punto de control alcanzado
+        // Guardar el último punto de control alcanzado
         for (int i = 0; i < _checksPoint.Length; i++)
         {
             if (_checksPoint[i] == checkPoint && i > indexChecksPoint)
             {
-                indexChecksPoint = i;
-                PlayerPrefs.SetInt("ChecksIndex", indexChecksPoint);
+                indexChecksPoint = i; // Actualizar el índice
+                PlayerPrefs.SetInt("ChecksIndex", indexChecksPoint); // Guardar el progreso
                 PlayerPrefs.Save();
             }
         }
@@ -70,32 +66,34 @@ public class CheckPointSystem : MonoBehaviour
 
     private void Update()
     {
+        // Respawnear si el jugador no está activo en la escena
         if (_currentPlayer == null)
         {
-            RespawnPlayer(); // El jugador ha muerto, respawn al �ltimo punto de control
+            RespawnPlayer();
         }
     }
 
     private void RespawnPlayer()
     {
-        if (_currentPlayer == null)
+        // Verificar que el índice del punto de control sea válido
+        if (indexChecksPoint >= 0 && indexChecksPoint < _checksPoint.Length)
         {
             Vector3 spawnPosition = _checksPoint[indexChecksPoint].transform.position;
             _currentPlayer = Instantiate(_playerPrefab, spawnPosition, Quaternion.identity);
 
-            // Asigna al jugador como el "Follow Target" de la Cinemachine Camera
+            // Asignar la cámara al nuevo jugador
             if (_cinemachineCamera != null)
             {
                 _cinemachineCamera.Follow = _currentPlayer.transform;
             }
         }
-    }
-
-    public void ResetCheckPoints()
-    {
-        PlayerPrefs.DeleteKey("ChecksIndex");
-        indexChecksPoint = 0;
-        PlayerPrefs.Save();
+        else
+        {
+            Debug.LogError("Índice de punto de control no válido.");
+        }
     }
 }
+
+
+
 
