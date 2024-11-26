@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &873671402639740729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3070824270179198643}
+  m_Layer: 0
+  m_Name: raycatsCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3070824270179198643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873671402639740729}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.002, y: -0.537, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3944953471282055781}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1799595136657036144
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,12 +61,13 @@ Transform:
   m_GameObject: {fileID: 1799595136657036144}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.021, y: -0.079, z: 0}
+  m_LocalPosition: {x: -0.021, y: -0.086, z: 0}
   m_LocalScale: {x: 0.89, y: 0.89, z: 0.89}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8614624900388854799}
   - {fileID: 2485953285431630067}
+  - {fileID: 3070824270179198643}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3786933707033517270
@@ -53,19 +85,21 @@ MonoBehaviour:
   _groundSpeed: 180
   _airSpeed: 100
   _motionSoftener: 0
-  _jumpForce: 250
+  _jumpForce: 252
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 8
   _groundCheck: {fileID: 8614624900388854799}
-  _boxDimension: {x: 0.28, y: 0.05, z: 0}
+  _boxDimension: {x: 0.3, y: 0.08, z: 0}
   _isGrounded: 0
   _wallCheck: {fileID: 2485953285431630067}
-  _boxWallDimension: {x: 0.15, y: 0.79, z: 0}
+  _boxWallDimension: {x: 0.38, y: 0.72, z: 0}
   _slidinVelocity: 0.5
   _jumpForceWallY: 4
   _jumpForceWallX: 3.4
   _jumpTimeWall: 0.33
+  _raycastDistance: 0.3
+  _raycastOrigin: {fileID: 3070824270179198643}
 --- !u!50 &4003150960934018336
 Rigidbody2D:
   serializedVersion: 4
@@ -236,7 +270,7 @@ Transform:
   m_GameObject: {fileID: 3935941656413658606}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -0.378, z: 0}
+  m_LocalPosition: {x: -0.003, y: -0.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -267,7 +301,7 @@ Transform:
   m_GameObject: {fileID: 7563613559564579089}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006, y: -0.871, z: 0}
+  m_LocalPosition: {x: -0.006, y: -0.885, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -1,0 +1,1885 @@
+fileFormatVersion: 2
+guid: a3770dfc52dbcc64c8278b6651b4560b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 96
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 24, y: -48}
+        - {x: 27, y: -43}
+        - {x: 32, y: -39}
+        - {x: 39, y: -39}
+        - {x: 46, y: -41}
+        - {x: 48, y: -42}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65af0bb5979a97489737305116b12d2
+      internalID: 314170101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: -42}
+        - {x: 48, y: -42}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21800e2f640eb8646a35478d3a76c6fe
+      internalID: 1152804337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: -42}
+        - {x: 48, y: -42}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b919792846087948b9245da49bbf36c
+      internalID: 852777436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: -42}
+        - {x: 48, y: -42}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69765dc0221ba794cbfa8a949f98c922
+      internalID: 2092109193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: -42}
+        - {x: -43, y: -40}
+        - {x: -36, y: -40}
+        - {x: -27, y: -43}
+        - {x: -21, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3023201d317f0f45aff3075e9034580
+      internalID: 1974568685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28cfdf59fb9f4f345b3fffa83dad37c3
+      internalID: -457044969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b30e98c6e8a95429fee683e10d2468
+      internalID: -516061317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f3e6109d9c7094596d6e30b2f428bd
+      internalID: -1187311261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe66eb887a01dd844b043a38f58ef5c3
+      internalID: 1733684447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_9
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c37b4c21e54a8c48989768aaa4780a1
+      internalID: -325237516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_10
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8323f618ba78ba046ba3b27f1c277d50
+      internalID: 1348154668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_11
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3e510f308549346b6618b6aa5b3958
+      internalID: 331053208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_12
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d04f2ff5194547242809b76f8c75698f
+      internalID: -759607078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_13
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9055b4352dfc74b8150abed9929cc6
+      internalID: -1961773384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 48, y: -48}
+        - {x: 48, y: 48}
+        - {x: 24, y: 48}
+        - {x: 24, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cee6b09fc2a2567409e6db95e7f64abf
+      internalID: 1127844478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7046b5c975ed8664b80c9113c6e7d20c
+      internalID: -1503751865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2397a6f1e77e1bc498900f4b72beeb1a
+      internalID: -119250258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_17
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6807f666c1f22c40a0e1e51034c7ea2
+      internalID: 1708544960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_18
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -21, y: -48}
+        - {x: -21, y: 48}
+        - {x: -48, y: 48}
+        - {x: -48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121a9c48b1b003e4b9a7069742d8bc8f
+      internalID: -1429463995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_19
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a686efa8f98814449b34c98d062493e
+      internalID: 585150321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_20
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -24, y: -48}
+        - {x: -24, y: 6}
+        - {x: -19, y: 13}
+        - {x: -9, y: 18}
+        - {x: -2, y: 19}
+        - {x: 48, y: 19}
+        - {x: 48, y: 48}
+        - {x: -48, y: 48}
+        - {x: -48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372b3f9b88cee984d916c18831c6be78
+      internalID: 297635045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_21
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 24, y: -48}
+        - {x: 24, y: 0}
+        - {x: 21, y: 7}
+        - {x: 15, y: 16}
+        - {x: -2, y: 19}
+        - {x: -48, y: 19}
+        - {x: -48, y: 48}
+        - {x: 48, y: 48}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83442faba7d6ca4ca63ce6e938585c0
+      internalID: 835304668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_22
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b30f9577daccfd429d43c7be119850b
+      internalID: 537193618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_23
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f24bbaf4a20fb142937483f1dcb88f2
+      internalID: 1188852546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_24
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -24, y: -48}
+        - {x: -24, y: 6}
+        - {x: -20, y: 18}
+        - {x: -10, y: 28}
+        - {x: 3, y: 33}
+        - {x: 48, y: 33}
+        - {x: 48, y: 48}
+        - {x: -48, y: 48}
+        - {x: -48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ef360e92e33fe4cb8f12e6acda25b9
+      internalID: 342252942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_25
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: 33}
+        - {x: -48, y: 48}
+        - {x: 48, y: 48}
+        - {x: 48, y: 33}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0208da3ffc063849b1ca3cf13907f9d
+      internalID: 1674744529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_26
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 24, y: -48}
+        - {x: 24, y: 0}
+        - {x: 21, y: 14}
+        - {x: 12, y: 26}
+        - {x: -1, y: 33}
+        - {x: -48, y: 33}
+        - {x: -48, y: 48}
+        - {x: 48, y: 48}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fc29e338d71b7f499e58b81447b1e37
+      internalID: -540089899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_27
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf860888c8059b45b05e559f0a4060a
+      internalID: 642642103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 48, y: -48}
+        - {x: 48, y: 48}
+        - {x: 24, y: 48}
+        - {x: 24, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 244de6852656add49b1d178516719a08
+      internalID: 6809868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_29
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7becc7c729c9fac448c4246e4beb15ec
+      internalID: -2030008903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dfa15a22043761449ad29d15654ef99
+      internalID: 1521678950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_31
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a2f5e6a8935db4cb4ee9a4bf449f01
+      internalID: -1383099631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_32
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -21, y: -48}
+        - {x: -21, y: 48}
+        - {x: -48, y: 48}
+        - {x: -48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b224d168e259e647b7f0796a5a69627
+      internalID: -892488127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_33
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb4cc4d83a3c454ea98a5e0ae843f6d
+      internalID: -1717365760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_34
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: 48}
+        - {x: -24, y: 48}
+        - {x: -24, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043596876df618c4391d691da9506351
+      internalID: 296483251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_35
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 24, y: -48}
+        - {x: 24, y: 48}
+        - {x: 48, y: 48}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c8d1335849895e478b39e45101bbd6f
+      internalID: 1804035983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_36
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b3c04306955d4f48829542683745882
+      internalID: -1502044091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_37
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9f1c3ca8825df45864d8977555ed07
+      internalID: -2071704740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_38
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: 48}
+        - {x: -24, y: 48}
+        - {x: -24, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e3e768dce68d548ba554119b162ad7
+      internalID: -5728485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_39
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 24, y: -48}
+        - {x: 24, y: 48}
+        - {x: 48, y: 48}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e561d8453f6b6804b99d1101387d881d
+      internalID: 1137027617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_40
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d9955dd9ce17b44bbef437571e190ad
+      internalID: 33878169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 48, y: -48}
+        - {x: 48, y: 48}
+        - {x: 24, y: 48}
+        - {x: 24, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: affcd235eefc824499af98986c2f910b
+      internalID: -917748233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403aee9f9c2de6649be90ee3e808b2ec
+      internalID: 883530990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_43
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702d7f95f7677304fb8ebb3af0276db4
+      internalID: 1356115552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_44
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a56cd4fe9757b343ac013415631b952
+      internalID: -990271423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_45
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -21, y: -48}
+        - {x: -21, y: 48}
+        - {x: -48, y: 48}
+        - {x: -48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e734f4b2b84515c4eadeeb6d12110ab5
+      internalID: 916751706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_46
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c53096a90d4b214fb3a70536ae0a680
+      internalID: -839552521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_47
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: 48}
+        - {x: -24, y: 48}
+        - {x: -24, y: -42}
+        - {x: 48, y: -42}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f39b52e89fc4946a629b1589295422
+      internalID: -1780099557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_48
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: -42}
+        - {x: 24, y: -42}
+        - {x: 24, y: 48}
+        - {x: 48, y: 48}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949f4684147dfb344aa606991dc10213
+      internalID: 639457681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_49
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8859f796b839dcb4ab5b1db1db73c5ea
+      internalID: -936174300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_50
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1960f05988b429e459f5276708ba0040
+      internalID: -304512012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_51
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: 48}
+        - {x: -24, y: 48}
+        - {x: -24, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1f443c926656d4a8a0c293dab68e4c
+      internalID: 992387275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_52
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 48, y: -48}
+        - {x: 48, y: 48}
+        - {x: 24, y: 48}
+        - {x: 24, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061db3c7350e2774cb5d50e011c22455
+      internalID: -590884418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_53
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b5e06532ba816449ae682fd4aa7758
+      internalID: 708828479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 34, y: 24}
+        - {x: 27, y: 30}
+        - {x: 24, y: 40}
+        - {x: 24, y: 48}
+        - {x: 48, y: 48}
+        - {x: 48, y: 18}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843ff4ccb5cbaa547ba42c20a1bfac93
+      internalID: 1141411834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_55
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: 18}
+        - {x: -48, y: 48}
+        - {x: 48, y: 48}
+        - {x: 48, y: 18}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd16409425509774d9720dd64274eaea
+      internalID: -1412693900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_56
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: 18}
+        - {x: -48, y: 48}
+        - {x: 48, y: 48}
+        - {x: 48, y: 18}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a13a7fa55787b5b48bf869322a3e22a8
+      internalID: 1179260357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_57
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: 18}
+        - {x: -48, y: 48}
+        - {x: 48, y: 48}
+        - {x: 48, y: 18}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b56dcc501ecf45b41b95c0a345263803
+      internalID: 233598399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_58
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -31, y: 30}
+        - {x: -39, y: 22}
+        - {x: -48, y: 18}
+        - {x: -48, y: 48}
+        - {x: -21, y: 48}
+        - {x: -24, y: 39}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e5e2221eb9c88428e38afd5642bd22
+      internalID: 876509809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_59
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80be49323931fa64097c3ab2ca3431b1
+      internalID: -2122460465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_60
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80740ff0a97c19a46bf59283f715a7c6
+      internalID: 1013465011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_61
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceaec4f937ee6ad4da2757614f65a2b4
+      internalID: -1240984478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_62
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6e2d44466e8de48bad4a8e3a2b26b9
+      internalID: 1909537298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_63
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be8906342e7a514587b9e940503b9b0
+      internalID: -1905883970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_64
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: 48}
+        - {x: -24, y: 48}
+        - {x: -24, y: -42}
+        - {x: 48, y: -42}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11b2490167d82244bb2d37a00516c2d
+      internalID: 739405158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_65
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: -42}
+        - {x: 48, y: -42}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a3a3bf9c097b34881b2493f9bf214e
+      internalID: -345474216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_66
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: -42}
+        - {x: 24, y: -42}
+        - {x: 24, y: 48}
+        - {x: 48, y: 48}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3aef0e0bb10fd04cabc958ebfe47866
+      internalID: -885508593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_67
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7e6c7e72873664fa32e37b216b0bd0
+      internalID: -624051102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_68
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e3215a262696946bac01cb03c84299
+      internalID: 1402458715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_69
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58740e73c84613149842a84a05f3f457
+      internalID: -848408144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_70
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81716111bac060642aeb3f417c304ba0
+      internalID: -2145844458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_71
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3e17e842f168d42969a33cda6aa791
+      internalID: -1472954578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileSet_Nueva tecnica_72
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058cfb42bc5b2634aad4b22651ae8a7f
+      internalID: -1547878108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      TileSet_Nueva tecnica_0: 314170101
+      TileSet_Nueva tecnica_1: 1152804337
+      TileSet_Nueva tecnica_10: 1348154668
+      TileSet_Nueva tecnica_11: 331053208
+      TileSet_Nueva tecnica_12: -759607078
+      TileSet_Nueva tecnica_13: -1961773384
+      TileSet_Nueva tecnica_14: 1127844478
+      TileSet_Nueva tecnica_15: -1503751865
+      TileSet_Nueva tecnica_16: -119250258
+      TileSet_Nueva tecnica_17: 1708544960
+      TileSet_Nueva tecnica_18: -1429463995
+      TileSet_Nueva tecnica_19: 585150321
+      TileSet_Nueva tecnica_2: 852777436
+      TileSet_Nueva tecnica_20: 297635045
+      TileSet_Nueva tecnica_21: 835304668
+      TileSet_Nueva tecnica_22: 537193618
+      TileSet_Nueva tecnica_23: 1188852546
+      TileSet_Nueva tecnica_24: 342252942
+      TileSet_Nueva tecnica_25: 1674744529
+      TileSet_Nueva tecnica_26: -540089899
+      TileSet_Nueva tecnica_27: 642642103
+      TileSet_Nueva tecnica_28: 6809868
+      TileSet_Nueva tecnica_29: -2030008903
+      TileSet_Nueva tecnica_3: 2092109193
+      TileSet_Nueva tecnica_30: 1521678950
+      TileSet_Nueva tecnica_31: -1383099631
+      TileSet_Nueva tecnica_32: -892488127
+      TileSet_Nueva tecnica_33: -1717365760
+      TileSet_Nueva tecnica_34: 296483251
+      TileSet_Nueva tecnica_35: 1804035983
+      TileSet_Nueva tecnica_36: -1502044091
+      TileSet_Nueva tecnica_37: -2071704740
+      TileSet_Nueva tecnica_38: -5728485
+      TileSet_Nueva tecnica_39: 1137027617
+      TileSet_Nueva tecnica_4: 1974568685
+      TileSet_Nueva tecnica_40: 33878169
+      TileSet_Nueva tecnica_41: -917748233
+      TileSet_Nueva tecnica_42: 883530990
+      TileSet_Nueva tecnica_43: 1356115552
+      TileSet_Nueva tecnica_44: -990271423
+      TileSet_Nueva tecnica_45: 916751706
+      TileSet_Nueva tecnica_46: -839552521
+      TileSet_Nueva tecnica_47: -1780099557
+      TileSet_Nueva tecnica_48: 639457681
+      TileSet_Nueva tecnica_49: -936174300
+      TileSet_Nueva tecnica_5: -457044969
+      TileSet_Nueva tecnica_50: -304512012
+      TileSet_Nueva tecnica_51: 992387275
+      TileSet_Nueva tecnica_52: -590884418
+      TileSet_Nueva tecnica_53: 708828479
+      TileSet_Nueva tecnica_54: 1141411834
+      TileSet_Nueva tecnica_55: -1412693900
+      TileSet_Nueva tecnica_56: 1179260357
+      TileSet_Nueva tecnica_57: 233598399
+      TileSet_Nueva tecnica_58: 876509809
+      TileSet_Nueva tecnica_59: -2122460465
+      TileSet_Nueva tecnica_6: -516061317
+      TileSet_Nueva tecnica_60: 1013465011
+      TileSet_Nueva tecnica_61: -1240984478
+      TileSet_Nueva tecnica_62: 1909537298
+      TileSet_Nueva tecnica_63: -1905883970
+      TileSet_Nueva tecnica_64: 739405158
+      TileSet_Nueva tecnica_65: -345474216
+      TileSet_Nueva tecnica_66: -885508593
+      TileSet_Nueva tecnica_67: -624051102
+      TileSet_Nueva tecnica_68: 1402458715
+      TileSet_Nueva tecnica_69: -848408144
+      TileSet_Nueva tecnica_7: -1187311261
+      TileSet_Nueva tecnica_70: -2145844458
+      TileSet_Nueva tecnica_71: -1472954578
+      TileSet_Nueva tecnica_72: -1547878108
+      TileSet_Nueva tecnica_8: 1733684447
+      TileSet_Nueva tecnica_9: -325237516
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

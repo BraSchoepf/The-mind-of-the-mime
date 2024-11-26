@@ -5,85 +5,82 @@ using System.Collections.Generic;
 public class IMPOneWay : InvisibleMovingPlatform
 {
     [Header("Configuración de Movimiento")]
-    [SerializeField] private float _speed = 2f; 
-    [SerializeField] private float waitTimeAtStart = 1f; 
-    [SerializeField] private List<Transform> _destinationPoints; 
+    [SerializeField] private float _speed = 2f;
+    [SerializeField] private float waitTimeAtStart = 1f;
+    [SerializeField] private List<Transform> _destinationPoints;
 
-    private Vector3 _initialPosition; 
-    private bool _isWaiting = false; 
-    private int _currentDestinationIndex = 0; // Índice del punto de destino actual 
+    private Vector3 _initialPosition;
+    private bool _isWaiting = false;
+    private int _currentDestinationIndex = 0;
 
     protected override void Start()
     {
         base.Start();
-        _initialPosition = transform.position; // Guarda la posición inicial al empezar
+        _initialPosition = transform.position;
 
         if (_destinationPoints.Count == 0)
         {
             Debug.LogWarning("No se han asignado puntos de destino, la plataforma no se moverá.");
         }
 
-        // Iniciar la espera inicial antes de comenzar el movimiento
-        StartCoroutine(WaitAtStart());
+        // Inicia la plataforma en espera inicial
+        StartCoroutine(InitialWaitAndStartCycle());
     }
 
     protected override void Update()
     {
-        if (!_isInvisible && !_isWaiting && _destinationPoints.Count > 0) // Mueve solo si está visible y no está en espera
-        {
-            MovePlatform();
-        }
-
         base.Update();
     }
 
-    private void MovePlatform()
+    private IEnumerator InitialWaitAndStartCycle()
     {
-        if (_destinationPoints.Count > 0)
+        // Espera inicial antes de iniciar el ciclo
+        _isWaiting = true;
+        transform.position = _initialPosition; // Asegura que la plataforma comience en la posición inicial
+        yield return new WaitForSeconds(waitTimeAtStart); // Espera inicial
+        _isWaiting = false;
+
+        // Inicia el ciclo de movimiento
+        StartCoroutine(PlatformCycle());
+    }
+
+    private IEnumerator PlatformCycle()
+    {
+        while (true)
         {
-            // Obtener el siguiente punto de destino en la lista
-            Transform targetPoint = _destinationPoints[_currentDestinationIndex];
-
-            // Calcular la dirección hacia el objetivo sin afectar la rotación de la plataforma
-            Vector3 directionToTarget = (targetPoint.position - transform.position).normalized;
-
-            // Mover la plataforma en la dirección calculada
-            transform.Translate(directionToTarget * _speed * Time.deltaTime, Space.World);
-
-            // Comprobar si la plataforma ha alcanzado el destino
-            if (Vector3.Distance(transform.position, targetPoint.position) <= 0.1f)
+            if (!_isInvisible && _destinationPoints.Count > 0)
             {
-                // Iniciar espera en el punto antes de pasar al siguiente
-                StartCoroutine(WaitAtPoint());
+                // Obtener el siguiente punto de destino
+                Transform targetPoint = _destinationPoints[_currentDestinationIndex];
+
+                // Mover la plataforma hacia el punto
+                while (Vector3.Distance(transform.position, targetPoint.position) > 0.1f)
+                {
+                    if (_isInvisible) yield break; // Detener movimiento si la plataforma se vuelve invisible
+                    Vector3 directionToTarget = (targetPoint.position - transform.position).normalized;
+                    transform.Translate(directionToTarget * _speed * Time.deltaTime, Space.World);
+                    yield return null; // Espera hasta el siguiente frame
+                }
+
+                // Espera en el punto alcanzado
+                _isWaiting = true;
+                yield return new WaitForSeconds(waitTimeAtStart);
+                _isWaiting = false;
+
+                // Avanzar al siguiente punto
+                _currentDestinationIndex++;
+
+                // Si llegamos al último punto, teletransportar al primero
+                if (_currentDestinationIndex >= _destinationPoints.Count)
+                {
+                    transform.position = _destinationPoints[0].position; // Teletransporte al punto inicial
+                    _currentDestinationIndex = 1; // Reinicia desde el segundo punto
+                }
+            }
+            else
+            {
+                yield return null; // Espera el siguiente frame si está invisible o sin puntos
             }
         }
-    }
-
-
-    private IEnumerator WaitAtPoint()
-    {
-        _isWaiting = true; 
-        yield return new WaitForSeconds(waitTimeAtStart); 
-        _isWaiting = false; 
-
-        // Avanzar al siguiente punto de destino
-        _currentDestinationIndex++;
-
-        // Si hemos llegado al último punto, reiniciamos el ciclo de inmediato
-        if (_currentDestinationIndex >= _destinationPoints.Count)
-        {
-            // Teletransportar la plataforma al primer punto
-            transform.position = _destinationPoints[0].position;
-
-            _currentDestinationIndex = 1; // Comienza el ciclo de nuevo desde el segundo punto
-        }
-    }
-
-    private IEnumerator WaitAtStart()
-    {
-        _isWaiting = true; 
-        transform.position = _initialPosition; 
-        yield return new WaitForSeconds(waitTimeAtStart); 
-        _isWaiting = false; 
     }
 }
