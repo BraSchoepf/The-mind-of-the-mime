@@ -1,0 +1,448 @@
+fileFormatVersion: 2
+guid: 8a07708a0dcc2e34789fcb5f865eefd9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 96
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spr_EstructuraRota_Word3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: -39}
+        - {x: 0, y: -39}
+        - {x: 0, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 522477ffd70bb0743b8f0532adbb690a
+      internalID: -356917239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_EstructuraRota_Word3_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: 48}
+        - {x: 0, y: 48}
+        - {x: 0, y: 24}
+        - {x: 48, y: -3}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390c10632f60f264a80726ddc915aba8
+      internalID: -1937277485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_EstructuraRota_Word3_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 480
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -24, y: -48}
+        - {x: -24, y: -11}
+        - {x: -48, y: -3}
+        - {x: -48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f3ce241b5239a48a3aa25ff5455869
+      internalID: -1367870822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_EstructuraRota_Word3_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e38e0bc522e1a409ebfebad88baed4
+      internalID: -51074208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_EstructuraRota_Word3_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 384
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -24, y: -48}
+        - {x: -24, y: 48}
+        - {x: -48, y: 48}
+        - {x: -48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd481bc658fd1c54bbc2e8ef523418ee
+      internalID: -1955170573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_EstructuraRota_Word3_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 29, y: -48}
+        - {x: 29, y: -42}
+        - {x: 48, y: -42}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3f588affd003a438e65cb310f013f1
+      internalID: -1837215450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_EstructuraRota_Word3_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: -39}
+        - {x: 48, y: -39}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ea3d061b85ad24693b145c8cb551f9
+      internalID: 1114127466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_EstructuraRota_Word3_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: -39}
+        - {x: 18, y: -39}
+        - {x: 18, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c8a30dede498b540806b3b6dfaff8f9
+      internalID: -737245752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_EstructuraRota_Word3_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: 39}
+        - {x: -48, y: 48}
+        - {x: 48, y: 48}
+        - {x: 48, y: 39}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16a851ab2de4e145b0b46ff1c393292
+      internalID: -774948851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_EstructuraRota_Word3_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -48, y: -48}
+        - {x: -48, y: 48}
+        - {x: 18, y: 48}
+        - {x: 18, y: 14}
+        - {x: 48, y: -15}
+        - {x: 48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca8d494192b3074e97b48939491e2d6
+      internalID: -1060893604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_EstructuraRota_Word3_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -24, y: -48}
+        - {x: -24, y: -32}
+        - {x: -48, y: -15}
+        - {x: -48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d054bad94eeb2ee4eb0903b95551ba2c
+      internalID: -69580866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_EstructuraRota_Word3_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1226cbf8e114e947873b1d69dda46f3
+      internalID: -1131178456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_EstructuraRota_Word3_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -24, y: -48}
+        - {x: -24, y: 48}
+        - {x: -48, y: 48}
+        - {x: -48, y: -48}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1250745add1c164eaa1c3eb967108d0
+      internalID: -226627510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Spr_EstructuraRota_Word3_0: -356917239
+      Spr_EstructuraRota_Word3_1: -1937277485
+      Spr_EstructuraRota_Word3_10: -69580866
+      Spr_EstructuraRota_Word3_11: -1131178456
+      Spr_EstructuraRota_Word3_12: -226627510
+      Spr_EstructuraRota_Word3_2: -1367870822
+      Spr_EstructuraRota_Word3_3: -51074208
+      Spr_EstructuraRota_Word3_4: -1955170573
+      Spr_EstructuraRota_Word3_5: -1837215450
+      Spr_EstructuraRota_Word3_6: 1114127466
+      Spr_EstructuraRota_Word3_7: -737245752
+      Spr_EstructuraRota_Word3_8: -774948851
+      Spr_EstructuraRota_Word3_9: -1060893604
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
