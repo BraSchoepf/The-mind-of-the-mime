@@ -10,6 +10,8 @@ TagManager:
   - Obstacle
   - ChecksPoint
   - Box
+  - Ground
+  - Hole
   layers:
   - Default
   - TransparentFX

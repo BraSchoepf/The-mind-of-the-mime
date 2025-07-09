@@ -13,6 +13,11 @@ public class PlayerMove : MonoBehaviour
     private bool _lokingRigth;
     private float _horizontalMovement;
 
+    [Header("Dash")]
+    [SerializeField] private float _dashSpeed = 15f;
+    [SerializeField] private float _dashDuration = 0.2f;
+    private bool _isDashing = false;
+
     [Header("Jump")]
     [SerializeField] private float _jumpForce;
     [SerializeField] private LayerMask _groundLayer;
@@ -41,10 +46,37 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private Transform _raycastOrigin; // Nueva variable pública para elegir la posición de origen del Raycast
     private bool _isLookingAtWall;
 
+    public static PlayerMove Instance { get; private set; } // Singleton
+
+    private void Awake()
+    {
+        // Verifica si ya existe una instancia
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // Evita duplicados
+            return;
+        }
+        Instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null; // Limpia la referencia al destruirse
+        }
+    }
+
+
     void Start()
     {
         _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void PerformDash(Vector2 direction, float force)
+    {
+        _rb.AddForce(direction * force, ForceMode2D.Impulse);
     }
 
     void Update()
@@ -95,6 +127,7 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_isDashing) return;
         // Detección de suelo
         _isGrounded = Physics2D.OverlapBox(_groundCheck.position ,_boxDimension, 0f, _groundLayer | (1 << LayerMask.NameToLayer("HiddenLayer") | (1 << LayerMask.NameToLayer("PlatformLayer"))));
 
@@ -157,6 +190,24 @@ public class PlayerMove : MonoBehaviour
         {
             Jump();
         }
+    }
+
+    public void PerformDash(Vector2 direction)
+    {
+        if (!_isDashing)
+        {
+            StartCoroutine(DashCoroutine(direction));        }
+    }
+
+    private IEnumerator DashCoroutine(Vector2 direction)
+    {
+        
+        _isDashing = true;
+        _rb.velocity = direction.normalized * _dashSpeed;
+
+        yield return new WaitForSeconds(_dashDuration);
+
+        _isDashing = false;
     }
 
     private void JumpingFromTheWall()
@@ -223,6 +274,5 @@ public class PlayerMove : MonoBehaviour
         // Dibujar la línea del raycast desde el origen hacia la dirección del raycast
         Gizmos.DrawLine(_raycastOrigin.position, (Vector2)_raycastOrigin.position + raycastDirection * _raycastDistance);
     }
-
+    
 }
-

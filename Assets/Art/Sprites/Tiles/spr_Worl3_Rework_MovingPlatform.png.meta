@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee2949decfc823744b1d9bd50b56aab8
+guid: a2e4e7ff3431663408b9e92d2049d643
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,13 +43,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 96
+  spriteBorder: {x: 0, y: 12, z: 0, w: 12}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -95,18 +95,40 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spr_Worl3_Rework_MovingPlatform_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12
+        width: 192
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7380084}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c68a95e71aff604286e1333cab0e533
+      internalID: -1553685056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_Worl3_Rework_MovingPlatform_0: -1553685056
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -4,10 +4,11 @@ namespace Lens
 {
     public class MagicLen : MonoBehaviour
     {
-        public enum LensMode { Reveal, Destroy }  // Enum para definir los modos de la lente
+        public enum LensMode { Reveal, Destroy, Happiness }  // Enum para definir los modos de la lente
         public LensMode currentMode = LensMode.Reveal;  // Modo inicial en Reveal
         public Color revealColor = Color.red;
         public Color destroyColor = Color.blue;
+        public Color happinessColor = Color.magenta;
         public float activationRange = 0.5f;
 
         private Rigidbody2D _rb;
@@ -27,7 +28,13 @@ namespace Lens
         {
             if (_spriteRenderer != null)
             {
-                _spriteRenderer.color = currentMode == LensMode.Reveal ? revealColor : destroyColor;
+                if (currentMode == LensMode.Reveal)
+                    _spriteRenderer.color = revealColor;
+                else if (currentMode == LensMode.Destroy)
+                    _spriteRenderer.color = destroyColor;
+                else if (currentMode == LensMode.Happiness)
+                    _spriteRenderer.color = happinessColor; 
+
             }
         }
 
@@ -57,6 +64,14 @@ namespace Lens
         private void Update()
         {
             MoveLensWithMouse();
+
+            if (currentMode == LensMode.Happiness && Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                Vector2 dashDirection = (Vector2)transform.position - (Vector2)Camera.main.transform.position;
+                dashDirection.Normalize();
+                PlayerMove.Instance.PerformDash(dashDirection);
+
+            }
 
             if (Input.GetMouseButtonDown(0))  
             {
@@ -88,19 +103,31 @@ namespace Lens
             }
         }
 
+        public virtual void Activate()
+        {
+            Debug.Log("Activando el modo de lente base");
+            // Comportamiento genérico de activación
+        }
+
         private void ToggleLensMode()
         {
-            currentMode = currentMode == LensMode.Reveal ? LensMode.Destroy : LensMode.Reveal;
-            UpdateLensColor();  // Actualiza el color de la lente al cambiar de modo
+            // Alterna de manera cíclica entre los tres modos
+            switch (currentMode)
+            {
+                case LensMode.Reveal:
+                    currentMode = LensMode.Destroy;
+                    break;
+                case LensMode.Destroy:
+                    currentMode = LensMode.Happiness;
+                    break;
+                case LensMode.Happiness:
+                    currentMode = LensMode.Reveal;
+                    break;
+            }
+
+            UpdateLensColor();  // Actualiza el color según el modo actual
         }
 
-        private void OnDrawGizmos()
-        {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawWireSphere(mousePosition, 0.1f); // Dibuja un círculo en el punto del Raycast
-        }
     }
 }
 
