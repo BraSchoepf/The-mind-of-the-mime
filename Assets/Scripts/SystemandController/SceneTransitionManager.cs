@@ -5,11 +5,24 @@ public class SceneTransitionManager : MonoBehaviour
 {
     public static SceneTransitionManager instance;
 
+    // Configurá estos índices según tu Build Settings
+    [Header("Índices - Versión Nueva")]
+    public int newVersion_Level1 = 1;
+    public int newVersion_Level2 = 2;
+
+    [Header("Índices - Versión Vieja")]
+    public int oldVersion_Level1 = 3;
+    public int oldVersion_Level2 = 4;
+
+    [Header("Otras escenas")]
+    public int endSceneIndex = 5;
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject); // Persiste entre escenas
         }
         else
         {
@@ -17,33 +30,35 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
-    // M�todo para cambiar de escena al iniciar el juego desde el men�
-    public void StartGame()
+    // --- Flujo versión NUEVA ---
+    public void StartNewVersion()
     {
-
-        int startingSceneIndex = 1;
-        LoadScene(startingSceneIndex);
+        PlayerPrefs.SetInt("ChecksIndex", 0);
+        LoadScene(newVersion_Level1);
     }
 
+    // --- Flujo versión VIEJA ---
+    public void StartOldVersion()
+    {
+        PlayerPrefs.SetInt("ChecksIndex", 0);
+        LoadScene(oldVersion_Level1);
+    }
 
+    // Usado internamente al completar niveles
     public void ChangeLevel(int sceneIndex, int checkpointIndex)
     {
-        PlayerPrefs.SetInt("ChecksIndex", checkpointIndex); // Guardamos el punto de control
-        LoadScene(sceneIndex); // Cargamos la siguiente escena
+        PlayerPrefs.SetInt("ChecksIndex", checkpointIndex);
+        LoadScene(sceneIndex);
     }
 
-    //Finalizar el juego
     public void EndGame()
     {
-        Debug.Log("Fin del juego.");
-        LoadScene(0);
+        PlayerPrefs.SetInt("ChecksIndex", 0);
+        LoadScene(endSceneIndex);
     }
+
     private void LoadScene(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
     }
 }
-
-
-
-

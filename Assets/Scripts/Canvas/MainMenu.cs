@@ -2,18 +2,22 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    
-    public void Play()
+    public void PlayNewVersion()
     {
-        SceneTransitionManager.instance.StartGame(); // Inicia el juego desde el primer nivel
+        SceneTransitionManager.instance.StartNewVersion(); // Va al nivel 1 nuevo (escena 1)
     }
 
-    
+    public void PlayOldVersion()
+    {
+        SceneTransitionManager.instance.StartOldVersion(); // Va al nivel 1 viejo (escena 3)
+    }
+
     public void Exit()
     {
         Debug.Log("EXIT");
-        Application.Quit(); // Sale de la aplicación
+        Application.Quit();
     }
+
     public void ResetProgress()
     {
         PlayerPrefs.DeleteAll();
@@ -21,7 +25,3 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Progreso reiniciado.");
     }
 }
-
-
-
-
