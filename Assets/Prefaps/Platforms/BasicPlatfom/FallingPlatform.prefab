@@ -52,7 +52,7 @@ MonoBehaviour:
   timeBeforeDisappear: 2
   timeBeforeReset: 2
   vibrationIntensity: 0
-  vibrationDuration: 0.5
+  vibrationDuration: 0
 --- !u!212 &5169121690139035571
 SpriteRenderer:
   m_ObjectHideFlags: 0

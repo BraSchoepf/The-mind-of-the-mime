@@ -8,6 +8,10 @@ public class MovingPlatform : MonoBehaviour
     protected int _nextPoint = 1;
     protected bool _movementSequence = true;
 
+    private Vector2 _startPosition;
+    private int _startNextPoint = 1;
+    private bool _startSequence = true;
+
     protected virtual void Start()
     {
         if (_movementPoint.Length < 2)
@@ -16,6 +20,10 @@ public class MovingPlatform : MonoBehaviour
             enabled = false;
             return;
         }
+
+        _startPosition = transform.position;
+        _startNextPoint = _nextPoint;
+        _startSequence = _movementSequence;
     }
 
     protected virtual void Update()
@@ -55,6 +63,13 @@ public class MovingPlatform : MonoBehaviour
         {
             other.transform.SetParent(null);
         }
+    }
+    private void OnBecameInvisible()
+    {
+        // Resetear posición y estado al punto de origen
+        transform.position = _startPosition;
+        _nextPoint = _startNextPoint;
+        _movementSequence = _startSequence;
     }
 }
 

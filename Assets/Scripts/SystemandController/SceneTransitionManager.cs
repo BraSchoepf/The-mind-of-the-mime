@@ -33,7 +33,8 @@ public class SceneTransitionManager : MonoBehaviour
     // --- Flujo versión NUEVA ---
     public void StartNewVersion()
     {
-        PlayerPrefs.SetInt("ChecksIndex", 0);
+        PlayerPrefs.SetInt("ChecksIndex", 0); // ya lo tenías
+        PlayerPrefs.Save();                   // agregar esto para asegurar escritura
         LoadScene(newVersion_Level1);
     }
 
@@ -41,6 +42,7 @@ public class SceneTransitionManager : MonoBehaviour
     public void StartOldVersion()
     {
         PlayerPrefs.SetInt("ChecksIndex", 0);
+        PlayerPrefs.Save();
         LoadScene(oldVersion_Level1);
     }
 

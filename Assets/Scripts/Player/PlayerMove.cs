@@ -16,6 +16,8 @@ public class PlayerMove : MonoBehaviour
 
     [Header("Jump")]
     [SerializeField] private float _jumpForce = 12f;
+    [SerializeField] private float _coyoteTime = 0.15f;
+    private float _coyoteTimeCounter;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private Vector3 _boxDimension;
@@ -64,7 +66,7 @@ public class PlayerMove : MonoBehaviour
         {
             if (_isSliding)
                 TriggerWallJump();
-            else if (_isGrounded)
+            else if (_coyoteTimeCounter > 0f && (!_isWall || _isGrounded))
                 _jump = true;
         }
 
@@ -83,6 +85,11 @@ public class PlayerMove : MonoBehaviour
             _groundLayer | (1 << LayerMask.NameToLayer("HiddenLayer"))
                          | (1 << LayerMask.NameToLayer("PlatformLayer"))
         );
+
+        if (_isGrounded)
+            _coyoteTimeCounter = _coyoteTime;
+        else
+            _coyoteTimeCounter -= Time.fixedDeltaTime;
 
         _isWall = Physics2D.OverlapBox(_wallCheck.position, _boxWallDimension, 0f, _groundLayer);
         _animator.SetBool("_isGround", _isGrounded);

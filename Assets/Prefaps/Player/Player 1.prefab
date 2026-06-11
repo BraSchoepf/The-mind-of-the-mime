@@ -118,6 +118,7 @@ MonoBehaviour:
   _airSpeed: 4
   _motionSoftener: 0
   _jumpForce: 12
+  _coyoteTime: 0.2
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8

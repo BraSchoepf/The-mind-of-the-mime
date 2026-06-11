@@ -9,7 +9,13 @@ public class BasicDoor : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneTransitionManager.instance.ChangeLevel(nextSceneIndex, checkpointIndex); // Cambia de nivel al atravesar la puerta
+            if (SceneTransitionManager.instance == null)
+            {
+                Debug.LogError("SceneTransitionManager no encontrado. ¿Arrancaste desde la escena de inicio?");
+                return;
+            }
+
+            SceneTransitionManager.instance.ChangeLevel(nextSceneIndex, checkpointIndex);
         }
     }
 }
