@@ -46,41 +46,44 @@ public class IMPOneWay : InvisibleMovingPlatform
 
     private IEnumerator PlatformCycle()
     {
-        while (true)
+        for (int i = 0; i < _destinationPoints.Count; i++)
         {
-            if (!_isInvisible && _destinationPoints.Count > 0)
+            if (_destinationPoints[i] == null)
             {
-                // Obtener el siguiente punto de destino
-                Transform targetPoint = _destinationPoints[_currentDestinationIndex];
-
-                // Mover la plataforma hacia el punto
-                while (Vector3.Distance(transform.position, targetPoint.position) > 0.1f)
-                {
-                    if (_isInvisible) yield break; // Detener movimiento si la plataforma se vuelve invisible
-                    Vector3 directionToTarget = (targetPoint.position - transform.position).normalized;
-                    transform.Translate(directionToTarget * _speed * Time.deltaTime, Space.World);
-                    yield return null; // Espera hasta el siguiente frame
-                }
-
-                // Espera en el punto alcanzado
-                _isWaiting = true;
-                yield return new WaitForSeconds(waitTimeAtStart);
-                _isWaiting = false;
-
-                // Avanzar al siguiente punto
-                _currentDestinationIndex++;
-
-                // Si llegamos al último punto, teletransportar al primero
-                if (_currentDestinationIndex >= _destinationPoints.Count)
-                {
-                    transform.position = _destinationPoints[0].position; // Teletransporte al punto inicial
-                    _currentDestinationIndex = 1; // Reinicia desde el segundo punto
-                }
+                Debug.LogError($"IMPOneWay '{gameObject.name}': _destinationPoints[{i}] es null. Revisá el Inspector.");
+                yield break;
             }
-            else
+        }
+        if (!_isInvisible && _destinationPoints.Count > 0)
+        {
+            Transform targetPoint = _destinationPoints[_currentDestinationIndex];
+
+            while (Vector3.Distance(transform.position, targetPoint.position) > 0.1f)
             {
-                yield return null; // Espera el siguiente frame si está invisible o sin puntos
+                if (_isInvisible)
+                {
+                    yield return null; // pausa sin matar la coroutine
+                    continue;
+                }
+                Vector3 directionToTarget = (targetPoint.position - transform.position).normalized;
+                transform.Translate(directionToTarget * _speed * Time.deltaTime, Space.World);
+                yield return null;
             }
+
+            _isWaiting = true;
+            yield return new WaitForSeconds(waitTimeAtStart);
+            _isWaiting = false;
+
+            _currentDestinationIndex++;
+            if (_currentDestinationIndex >= _destinationPoints.Count)
+            {
+                transform.position = _destinationPoints[0].position;
+                _currentDestinationIndex = _destinationPoints.Count > 1 ? 1 : 0;
+            }
+        }
+        else
+        {
+            yield return null;
         }
     }
 }
