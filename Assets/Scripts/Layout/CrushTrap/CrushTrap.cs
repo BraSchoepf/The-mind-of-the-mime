@@ -93,6 +93,12 @@ public class CrushTrap : MonoBehaviour
             CheckPointSystem.instance.TeleportToCheckpoint();
     }
 
+    public void OnPlayerHit()
+    {
+        if (_state == TrapState.Expanding)
+            CheckPointSystem.instance.TeleportToCheckpoint();
+    }
+
     private void OnDrawGizmos()
     {
         Vector3 target = Application.isPlaying ? _targetPosition :
