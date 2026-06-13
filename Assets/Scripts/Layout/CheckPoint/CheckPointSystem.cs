@@ -15,6 +15,8 @@ public class CheckPointSystem : MonoBehaviour
     private GameObject _currentPlayer; // Referencia al jugador actual
     private int indexChecksPoint; // Índice del último punto de control alcanzado
 
+    public Transform PlayerTransform => _currentPlayer?.transform;
+
     private void Awake()
     {
         instance = this;
@@ -64,14 +66,7 @@ public class CheckPointSystem : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        // Respawnear si el jugador no está activo en la escena
-        if (_currentPlayer == null)
-        {
-            RespawnPlayer();
-        }
-    }
+    private void Update() {}
 
     private void RespawnPlayer()
     {
@@ -90,6 +85,18 @@ public class CheckPointSystem : MonoBehaviour
         else
         {
             Debug.LogError("Índice de punto de control no válido.");
+        }
+    }
+
+    public void TeleportToCheckpoint()
+    {
+        if (_currentPlayer != null && indexChecksPoint >= 0 && indexChecksPoint < _checksPoint.Length)
+        {
+            _currentPlayer.transform.position = _checksPoint[indexChecksPoint].transform.position;
+
+            // Resetear velocidad si tiene Rigidbody2D
+            Rigidbody2D rb = _currentPlayer.GetComponent<Rigidbody2D>();
+            if (rb != null) rb.velocity = Vector2.zero;
         }
     }
 }

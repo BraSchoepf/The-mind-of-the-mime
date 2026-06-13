@@ -55,7 +55,7 @@ public class InvisibleMovingPlatform : MovingPlatform, IInvisiblePlatform
         }
 
         
-        if (Input.GetMouseButtonDown(1)) 
+        if (Input.GetMouseButtonDown(0)) 
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0.5f, LayerMask.GetMask("HiddenLayer"));
