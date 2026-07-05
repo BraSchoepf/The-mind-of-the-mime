@@ -6,6 +6,8 @@ public class InvisibleMovingPlatform : MovingPlatform, IInvisiblePlatform
     private Collider2D _collider;
     protected bool _isInvisible = true;
 
+    public bool IsInvisible => _isInvisible;
+
     // Llamar a la función Start de la clase base (MovingPlatform) para configurar el movimiento
     protected override void Start()
     {
