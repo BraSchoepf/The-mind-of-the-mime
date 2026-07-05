@@ -451,8 +451,12 @@ PrefabInstance:
       value: Check (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7280169256112890429, guid: 419a67f54c2fb7c4e93f39f78c9ca3d1, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8878114
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280169256112890429, guid: 419a67f54c2fb7c4e93f39f78c9ca3d1, type: 3}
       propertyPath: m_Offset.y
-      value: 0.55
+      value: 0.27690876
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -802,11 +806,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6930345720210447417, guid: 51126ecff693ac3498c00d95f159747c, type: 3}
       propertyPath: speed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6930345720210447417, guid: 51126ecff693ac3498c00d95f159747c, type: 3}
       propertyPath: _speed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6930345720210447417, guid: 51126ecff693ac3498c00d95f159747c, type: 3}
       propertyPath: _movementPoint.Array.size
