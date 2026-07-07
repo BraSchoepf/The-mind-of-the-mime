@@ -835,7 +835,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2635385456080013774, guid: 51126ecff693ac3498c00d95f159747c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1821891947}
   m_SourcePrefab: {fileID: 100100000, guid: 51126ecff693ac3498c00d95f159747c, type: 3}
 --- !u!4 &407185125 stripped
 Transform:
@@ -23983,6 +23986,26 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9001224a36fbc374d9a4bb5246b18eca, type: 3}
+--- !u!1 &1821891939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2635385456080013774, guid: 51126ecff693ac3498c00d95f159747c, type: 3}
+  m_PrefabInstance: {fileID: 407185124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1821891947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821891939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc7da6c3d830d64684dbd0731b33d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lightColor: {r: 1, g: 1, b: 1, a: 1}
+  _darkColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
+  _blinkSpeed: 2
 --- !u!1001 &1844800722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24240,7 +24263,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6996834012919279974, guid: 9001224a36fbc374d9a4bb5246b18eca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5
+      value: 1.49
       objectReference: {fileID: 0}
     - target: {fileID: 6996834012919279974, guid: 9001224a36fbc374d9a4bb5246b18eca, type: 3}
       propertyPath: m_LocalPosition.y
@@ -24426,7 +24449,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 271132806426559162, guid: 32bca994b19e5bb46a9c8d73ab27e55e, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 924473728137791654, guid: 32bca994b19e5bb46a9c8d73ab27e55e, type: 3}
       propertyPath: activationRange
